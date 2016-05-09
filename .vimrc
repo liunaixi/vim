@@ -14,12 +14,23 @@ set cindent
 set ts=4
 " set nowrap			" 禁止r行
 set encoding=utf-8
-colorscheme desert
+
+"set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 14
+set guifont=Meslo\ LG\ S\ for\ Powerline\ 14	
+
+" 主题配色
+set background=dark
+"let g:solarized_termcolors=256
+"colorscheme solarized 
+
+let g:molokai_original=1
+colorscheme molokai
+
 set incsearch       " 开启实时搜索
 set ignorecase      " 搜索大小写不敏感
 set hlsearch		" 高亮显示搜说结果
 set wildmenu		" vim命令行模式只能不全
-let mapleader = "," " 设置leader键
+let mapleader = ";" " 设置leader键
 	
 " 禁止光标闪烁
 set gcr=a:block-blinkkon0
@@ -31,6 +42,9 @@ set guioptions-=R
 " 禁止显示菜单和工具条
 set guioptions-=m
 set guioptions-=T
+
+" 让配置变更立即生效
+autocmd BufWritePost $MYVIMRC source $MYVIMRC
 
 " insert mode shortcut
 inoremap <C-h> <Left>
@@ -54,3 +68,9 @@ let Tlist_Exit_OnlyWindow = 1 			"如果taglist窗口是最后一个窗口，则
 let Tlist_WinWidth = 32 				"设置窗体宽度为32
 let Tlist_Ctags_Cmd ='/usr/local/Cellar/ctags/5.8_1/bin/ctags'
 map t :TlistToggle
+
+" 配置air-line
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+nnoremap <C-N> :bn<CR>
+nnoremap <C-P> :bp<CR>
