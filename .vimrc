@@ -11,10 +11,25 @@ set ruler 			" show row, column
 set showcmd
 set go=
 set cindent
-set ts=4
 " set nowrap			" 禁止r行
 set encoding=utf-8
 
+" 將制表符扩展为空格
+set expandtab
+" 设置编辑时制表符占用空格数
+set tabstop=4
+" 设置格式化时制表符占用空格数
+set shiftwidth=4
+" 把连续数量空格视为制表符
+set softtabstop=4
+
+" 基于缩进或语法进行代码折叠
+" set foldmethod=indent
+set foldmethod=syntax
+" 启动vim时关闭折叠代码
+set nofoldenable
+
+" 设置gui字体
 "set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 14
 set guifont=Meslo\ LG\ S\ for\ Powerline\ 14	
 
@@ -47,11 +62,11 @@ set guioptions-=T
 autocmd BufWritePost $MYVIMRC source $MYVIMRC
 
 " insert mode shortcut
-inoremap <C-h> <Left>
-inoremap <C-j> <Down>
-inoremap <C-k> <Up>
-inoremap <C-l> <Right>
-inoremap <C-d> <DELETE>
+"inoremap <C-h> <Left>
+"inoremap <C-j> <Down>
+"inoremap <C-k> <Up>
+"inoremap <C-l> <Right>
+"inoremap <C-d> <DELETE>
 
 " plugin manage
 if filereadable(expand("~/.vimrc.bundles"))
@@ -67,7 +82,7 @@ let Tlist_GainFocus_On_ToggleOpen = 1 	"Taglist窗口打开时，立刻切换为
 let Tlist_Exit_OnlyWindow = 1 			"如果taglist窗口是最后一个窗口，则退出vim
 let Tlist_WinWidth = 32 				"设置窗体宽度为32
 let Tlist_Ctags_Cmd ='/usr/local/Cellar/ctags/5.8_1/bin/ctags'
-map t :TlistToggle
+"map t :TlistToggle
 
 " 配置air-line
 let g:airline_powerline_fonts = 1
