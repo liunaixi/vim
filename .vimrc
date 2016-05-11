@@ -48,7 +48,7 @@ set wildmenu		" vim命令行模式只能不全
 let mapleader = ";" " 设置leader键
 	
 " 禁止光标闪烁
-set gcr=a:block-blinkkon0
+set gcr=a:block-blinkon0
 " 禁止显示滚动条
 set guioptions-=l
 set guioptions-=L
@@ -68,10 +68,52 @@ autocmd BufWritePost $MYVIMRC source $MYVIMRC
 "inoremap <C-l> <Right>
 "inoremap <C-d> <DELETE>
 
-" plugin manage
-if filereadable(expand("~/.vimrc.bundles"))
-	source ~/.vimrc.bundles
-endif
+" plugin manage------------------------------------------------------------
+if &compatible
+	set nocompatible
+end
+
+filetype off				  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+" call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" Keep Plugin commands between vundle#begin/end.
+
+" plugin on GitHub repo
+" Plugin 'tpope/vim-fugitive'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'tomasr/molokai'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'scrooloose/syntastic'
+Plugin 'Valloric/YouCompleteMe'
+" plugin from http://vim-scripts.org/vim/scripts.html
+Plugin 'L9'
+Plugin 'taglist.vim'
+Plugin 'auto-pairs'
+" Git plugin not hosted on GitHub
+" Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+" Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Install L9 and avoid a Naming conflict if you've already installed a
+" different version somewhere else.
+" Plugin 'ascenator/L9', {'name': 'newL9'}
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" -----------------------------------------------------------------------------
 
 " Setting for taglist
 let Tlist_Use_Right_Window = 1 			"让taglist窗口出现在Vim的右边
@@ -89,3 +131,16 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 nnoremap <C-N> :bn<CR>
 nnoremap <C-P> :bp<CR>
+
+" Setting for syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" Setting for YouCompleteMe
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
