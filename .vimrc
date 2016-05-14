@@ -11,6 +11,7 @@ set ruler 			" show row, column
 set showcmd
 set go=
 set cindent
+set history=100
 " set nowrap			" 禁止r行
 set encoding=utf-8
 
@@ -30,8 +31,11 @@ set foldmethod=syntax
 set nofoldenable
 
 " 设置gui字体
-"set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 14
-set guifont=Meslo\ LG\ S\ for\ Powerline\ 14	
+"set guifont = DejaVu\ Sans\ Mono\ for\ Powerline\ 14
+" for mac
+set guifont=Meslo\ LG\ S\ for\ Powerline:h14	
+" for linux
+"set guifont=Meslo\ LG\ S\ for\ Powerline\ 14	
 
 " 主题配色
 set background=dark
@@ -95,6 +99,8 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/syntastic'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'tpope/vim-surround'
+Plugin 'hynek/vim-python-pep8-indent'
 " plugin from http://vim-scripts.org/vim/scripts.html
 Plugin 'L9'
 Plugin 'taglist.vim'
@@ -124,7 +130,7 @@ let Tlist_GainFocus_On_ToggleOpen = 1 	"Taglist窗口打开时，立刻切换为
 let Tlist_Exit_OnlyWindow = 1 			"如果taglist窗口是最后一个窗口，则退出vim
 let Tlist_WinWidth = 32 				"设置窗体宽度为32
 let Tlist_Ctags_Cmd ='/usr/local/Cellar/ctags/5.8_1/bin/ctags'
-"map t :TlistToggle
+nnoremap <leader>t :TlistToggle
 
 " 配置air-line
 let g:airline_powerline_fonts = 1
