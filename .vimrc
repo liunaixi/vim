@@ -101,6 +101,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'tpope/vim-surround'
 Plugin 'hynek/vim-python-pep8-indent'
+Plugin 'scrooloose/nerdtree'
 " plugin from http://vim-scripts.org/vim/scripts.html
 Plugin 'L9'
 Plugin 'taglist.vim'
@@ -130,7 +131,7 @@ let Tlist_GainFocus_On_ToggleOpen = 1 	"Taglist窗口打开时，立刻切换为
 let Tlist_Exit_OnlyWindow = 1 			"如果taglist窗口是最后一个窗口，则退出vim
 let Tlist_WinWidth = 32 				"设置窗体宽度为32
 let Tlist_Ctags_Cmd ='/usr/local/Cellar/ctags/5.8_1/bin/ctags'
-nnoremap <leader>t :TlistToggle
+nnoremap <leader>t :TlistToggle<CR>
 
 " 配置air-line
 let g:airline_powerline_fonts = 1
@@ -139,9 +140,9 @@ nnoremap <C-N> :bn<CR>
 nnoremap <C-P> :bp<CR>
 
 " Setting for syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -150,3 +151,6 @@ let g:syntastic_check_on_wq = 0
 
 " Setting for YouCompleteMe
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+
+" Setting for Nerdtree
+nnoremap <leader>n :NERDTreeToggle<CR>
