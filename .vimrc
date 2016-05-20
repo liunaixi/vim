@@ -102,6 +102,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'tpope/vim-surround'
 Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'scrooloose/nerdtree'
+Plugin 'qpkorr/vim-bufkill'
 " plugin from http://vim-scripts.org/vim/scripts.html
 Plugin 'L9'
 Plugin 'taglist.vim'
