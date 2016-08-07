@@ -10,7 +10,7 @@ set nu    			" show line number
 set ruler 			" show row, column
 set showcmd
 set go=
-set cindent
+set autoindent
 set history=100
 " set nowrap			" 禁止r行
 set encoding=utf-8
@@ -31,11 +31,11 @@ set foldmethod=syntax
 set nofoldenable
 
 " 设置gui字体
-"set guifont = DejaVu\ Sans\ Mono\ for\ Powerline\ 14
+"set guifont=Menlo\ for\ Powerline\ 14
 " for mac
-set guifont=Meslo\ LG\ S\ for\ Powerline:h14	
+set guifont=Menlo\ for\ Powerline:h14	
 " for linux
-"set guifont=Meslo\ LG\ S\ for\ Powerline\ 14	
+"set guifont=Menlo\ for\ Powerline\ 14	
 
 " 主题配色
 set background=dark
@@ -61,6 +61,9 @@ set guioptions-=R
 " 禁止显示菜单和工具条
 set guioptions-=m
 set guioptions-=T
+
+" 高亮同名变量、函数
+" :autocmd CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'),'/\'))
 
 " 让配置变更立即生效
 autocmd BufWritePost $MYVIMRC source $MYVIMRC
@@ -97,12 +100,14 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'tomasr/molokai'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'scrooloose/syntastic'
+"Plugin 'scrooloose/syntastic'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'tpope/vim-surround'
 Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'scrooloose/nerdtree'
 Plugin 'qpkorr/vim-bufkill'
+Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'pangloss/vim-javascript'
 " plugin from http://vim-scripts.org/vim/scripts.html
 Plugin 'L9'
 Plugin 'taglist.vim'
