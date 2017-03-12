@@ -41,7 +41,7 @@ set guifont=Menlo\ for\ Powerline\ Regular\ 14
 " 主题配色
 set background=dark
 let g:solarized_termcolors=256
-colorscheme solarized 
+colorscheme molokai 
 
 "let g:molokai_original=1
 "colorscheme molokai
@@ -162,3 +162,4 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/
 
 " Setting for Nerdtree
 nnoremap <leader>n :NERDTreeToggle<CR>
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
