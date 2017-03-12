@@ -12,6 +12,7 @@ set showcmd
 set go=
 set autoindent
 set history=100
+set nrformats=       
 " set nowrap			" 禁止r行
 set encoding=utf-8
 
@@ -33,17 +34,17 @@ set nofoldenable
 " 设置gui字体
 "set guifont=Menlo\ for\ Powerline\ 14
 " for mac
-set guifont=Menlo\ for\ Powerline:h14	
+"set guifont=Menlo\ for\ Powerline:h14	
 " for linux
-"set guifont=Menlo\ for\ Powerline\ 14	
+set guifont=Menlo\ for\ Powerline\ Regular\ 14
 
 " 主题配色
 set background=dark
-"let g:solarized_termcolors=256
-"colorscheme solarized 
+let g:solarized_termcolors=256
+colorscheme solarized 
 
-let g:molokai_original=1
-colorscheme molokai
+"let g:molokai_original=1
+"colorscheme molokai
 
 set incsearch       " 开启实时搜索
 set ignorecase      " 搜索大小写不敏感
@@ -100,7 +101,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'tomasr/molokai'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-"Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'tpope/vim-surround'
 Plugin 'hynek/vim-python-pep8-indent'
@@ -108,6 +109,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'qpkorr/vim-bufkill'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'pangloss/vim-javascript'
+Plugin 'tpope/vim-unimpaired'
 " plugin from http://vim-scripts.org/vim/scripts.html
 Plugin 'L9'
 Plugin 'taglist.vim'
@@ -142,18 +144,18 @@ nnoremap <leader>t :TlistToggle<CR>
 " 配置air-line
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-nnoremap <C-N> :bn<CR>
-nnoremap <C-P> :bp<CR>
 
 " Setting for syntastic
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+let g:syntastic_javascript_checkers = ['eslint']
 
 " Setting for YouCompleteMe
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
