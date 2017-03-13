@@ -50,7 +50,8 @@ set incsearch       " 开启实时搜索
 set ignorecase      " 搜索大小写不敏感
 set hlsearch		" 高亮显示搜说结果
 set wildmenu		" vim命令行模式只能不全
-let mapleader = ";" " 设置leader键
+let mapleader = "," " 设置leader键
+noremap \ ,
 	
 " 禁止光标闪烁
 set gcr=a:block-blinkon0
@@ -138,7 +139,7 @@ let Tlist_Sort_Type ='name' 			"Tag的排序规则，以名字排序。默认是
 let Tlist_GainFocus_On_ToggleOpen = 1 	"Taglist窗口打开时，立刻切换为有焦点状态
 let Tlist_Exit_OnlyWindow = 1 			"如果taglist窗口是最后一个窗口，则退出vim
 let Tlist_WinWidth = 32 				"设置窗体宽度为32
-let Tlist_Ctags_Cmd ='/usr/local/Cellar/ctags/5.8_1/bin/ctags'
+let Tlist_Ctags_Cmd ='/usr/bin/ctags'
 nnoremap <leader>t :TlistToggle<CR>
 
 " 配置air-line
